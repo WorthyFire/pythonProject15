@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, TemplateView
 from .models import *
 from .forms import CreateProductForm
 
@@ -13,11 +13,11 @@ class LoginView(LoginView):
     template_name = 'main/login.html'
     success_url = reverse_lazy('main:create_service')
 
-def viewabout(request):
-    return render(request, 'main/about.html')
+class ViewAbout(TemplateView):
+    template_name = 'main/about.html'
 
-def viewcontacts(request):
-    return render(request, 'main/contacts.html')
+class ViewContacts(TemplateView):
+    template_name = 'main/contacts.html'
 
 class ProductList(ListView):
     model = Product
