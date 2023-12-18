@@ -1,0 +1,6 @@
+.item_menu {
+    position: relative;
+    display: inline-block;
+    left: 200px;
+    color: red;
+}
