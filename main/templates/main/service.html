@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+{% if products %}
+    {% for product in products %}
+        <p> <b> Описание товара: </b>{{product.description}} </p>
+        <b> Изображение товара: </b> <img src="{{product.photo.url}}" width="300px" height="300px">
+    {% endfor %}
+{% else %}
+<h3>На данный момент услуг нет</h3>
+{% endif %}
+{% endblock %}

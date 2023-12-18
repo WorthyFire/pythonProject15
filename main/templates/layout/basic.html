@@ -1,23 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
+
 <header>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </header>
 <body>
 {% if user.is_authenticated %}
     <ul class="dropdown_menu">
-        <a class="item_menu" href="{% url 'index' %}">Главная</a>
-        <a class="item_menu" href="#">Услуги</a>
-        <a class="item_menu" href="#">О нас</a>
-        <a class="item_menu" href="#">Контакты</a>
-        <a class="item_menu" href="#">Добавить услугу</a>
+        <a class="item_menu" href="{% url 'main:index' %}">Главная</a>
+        <a class="item_menu" href="{% url 'main:service' %}">Услуги</a>
+        <a class="item_menu" href="{% url 'main:about' %}">О нас</a>
+        <a class="item_menu" href="{% url 'main:contacts' %}">Контакты</a>
+        <a class="item_menu" href="{% url 'main:create_service' %}">Добавить услугу</a>
     </ul>
 {% else %}
     <ul class="dropdown_menu">
         <a class="item_menu" href="{% url 'main:index' %}">Главная</a>
-        <a class="item_menu" href="#">Услуги</a>
-        <a class="item_menu" href="#">О нас</a>
-        <a class="item_menu" href="#">Контакты</a>
-        <a class="item_menu" href="#">Войти</a>
+        <a class="item_menu" href="{ % url 'main:service' %}">Услуги</a>
+        <a class="item_menu" href="{% url 'main:about' %}">О нас</a>
+        <a class="item_menu" href="{% url 'main:contacts' %}">Контакты</a>
+        <a class="item_menu" href="{% url 'main:login' %}">Войти</a>
     </ul>
 {% endif %}
+{% block content%} {% endblock %}
 </body>
+</html>
