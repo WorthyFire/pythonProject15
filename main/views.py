@@ -11,7 +11,7 @@ def index(request):
 
 class LoginView(LoginView):
     template_name = 'main/login.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('main:create_service')
 
 def viewabout(request):
     return render(request, 'main/about.html')
@@ -28,4 +28,4 @@ class CreateProduct(CreateView):
     model = Product
     template_name = 'main/create_product.html'
     form_class = CreateProductForm
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('main:service')

@@ -1,6 +1,6 @@
-.item_menu {
+.dropdown_menu {
     position: relative;
     display: inline-block;
-    left: 200px;
+    left: 300px;
     color: red;
 }

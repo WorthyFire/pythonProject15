@@ -128,3 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'main.AdvUser'
+from django.core.management.commands.runserver import Command
+Command.default_port = "8011"
+
+LOGIN_REDIRECT_URL = '/create_service/'
