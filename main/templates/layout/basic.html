@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
 
+{% load static %}
 <header>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </header>
 <body>
 {% if user.is_authenticated %}
@@ -25,4 +23,3 @@
 {% endif %}
 {% block content%} {% endblock %}
 </body>
-</html>
