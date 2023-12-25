@@ -1,6 +1,5 @@
 # training-django
 
-git clone https://github.com/aekkakti/training-django
 
 cd training-django
 
