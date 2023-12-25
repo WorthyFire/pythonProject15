@@ -1,0 +1,20 @@
+{% extends 'layout/basic.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+    <h2>Ваша корзина добавленных услуг:</h2>
+    {% if user.is_authenticated %}
+        {% if user.basket.all %}
+            <ul>
+                {% for product in user.basket.all %}
+                    <li><b>Описание товара:</b> {{ product.description }}</li>
+                    <b>Изображение товара:</b> <img src="{{ product.photo.url }}" width="300px" height="300px">
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Ваша корзина пуста</p>
+        {% endif %}
+    {% else %}
+        <p>Вы не авторизованы</p>
+    {% endif %}
+{% endblock %}
